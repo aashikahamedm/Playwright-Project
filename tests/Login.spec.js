@@ -1,14 +1,14 @@
 const {test, expect} = require("@playwright/test");
 
-test('Browser Based Test_Trail',async({browser})=>
+test('Browser Based Test - Facebook Login Test',async({browser})=>
 {
     const context = await browser.newContext();
     const page = await context.newPage();
     await page.goto("https://www.facebook.com/");
     console.log(await page.title());
-    expect(page).toHaveTitle("Facebook - log in or sign up")
+    await expect(page).toHaveTitle("Facebook");
 });
-test('Page Based Test_Trail',async({page})=>
+test('Page Based Test - Verify whether user sees error message upon incorrect credentials',async({page})=>
 {
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
     console.log(await page.title());
