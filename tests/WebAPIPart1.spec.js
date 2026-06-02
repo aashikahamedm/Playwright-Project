@@ -1,7 +1,7 @@
 const {test, expect, request} = require('@playwright/test');
 const {APiUtils} = require('../tests/APiUtils');
-const loginPayLoad = {userEmail:"anshika@gmail.com",userPassword:"Iamking@000"};
-const orderPayLoad = {orders:[{country:"Cuba",productOrderedId:"67a8dde5c0d3e6622a297cc8"}]};
+const loginPayLoad = {userEmail:"aashik.ahamed91@gmail.com",userPassword:"Abcde@12345"};
+const orderPayLoad = {orders:[{country:"India",productOrderedId:"6a1cc5bb17ee3e78baadc708"}]};
  
  
 let response;
@@ -41,6 +41,3 @@ const orderIdDetails =await page.locator(".col-text").textContent();
 expect(response.orderId.includes(orderIdDetails)).toBeTruthy();
  
 });
- 
-//Verify if order created is showing in history page
-// Precondition - create order -
