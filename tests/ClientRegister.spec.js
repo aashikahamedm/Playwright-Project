@@ -37,12 +37,12 @@ test ('Registration_Orginal',async({page})=>
     //Varidation
     await firstName.fill("Aashik");
     await secondName.fill("ahamed");
-    await emailId.fill(userEmailId);
+    await emailId.fill(credentials.userEmailId);
     await phoneNumber.fill("9791585808");
     await occupationDropdown.selectOption("Student");
     await maleRadio.click();
-    await password.fill(userPassword);
-    await confirmPassword.fill(userPassword);
+    await password.fill(credentials.userPassword);
+    await confirmPassword.fill(credentials.userPassword);
     await checkBox.check();
     await register.click();
 
@@ -111,8 +111,6 @@ test ('Login_Original', async({page})=>
             break;
         }
     }
-
-    await page.pause();
 }
 )
 
