@@ -1,6 +1,6 @@
 const {test, expect} = require("@playwright/test");
 
-test('Browser Based Test - Facebook Login Test',async({browser})=>
+test('@Web - Browser Based Test - Facebook Login Test',async({browser})=>
 {
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -8,7 +8,7 @@ test('Browser Based Test - Facebook Login Test',async({browser})=>
     console.log(await page.title());
     await expect(page).toHaveTitle("Facebook");
 });
-test('Page Based Test - Verify whether user sees error message upon incorrect credentials',async({page})=>
+test('@Web - Verify whether user sees error message upon incorrect credentials',async({page})=>
 {
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
     console.log(await page.title());
@@ -18,7 +18,6 @@ test('Page Based Test - Verify whether user sees error message upon incorrect cr
     const Password = page.locator("[type='password']");
     const SubmitButton = page.locator("#signInBtn");
     const ErrorMessage = page.locator("[style*='block']");
-
 
     await UserName.fill("aashik1910");
     await Password.fill("Abcde@12345");

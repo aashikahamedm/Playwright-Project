@@ -1,9 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-
-
-
-test('@Webst Client App login', async ({ page }) => {
+test('@Web - Client App login', async ({ page }) => {
    //js file- Login js, DashboardPage
    const email = "aashikahamed.m@gmail.com";
    const productName = 'ZARA COAT 3';
@@ -14,7 +11,6 @@ test('@Webst Client App login', async ({ page }) => {
    await page.getByRole('button',{name:"Login"}).click();
    await page.waitForLoadState('networkidle');
    await page.locator(".card-body b").first().waitFor();
-   
    await page.locator(".card-body").filter({hasText:"ZARA COAT 3"})
    .getByRole("button",{name:"Add to Cart"}).click();
 

@@ -8,7 +8,7 @@ const productsDetails = {
     productName: "ADIDAS ORIGINAL",
 }
 
-test ('Registration_Orginal',async({page})=>
+test ('@Web - Validate Registration',async({page})=>
 {
     const registerButton = page.locator(".login-wrapper-footer-text");
     await page.goto("https://rahulshettyacademy.com/client/#/auth/login");
@@ -34,7 +34,7 @@ test ('Registration_Orginal',async({page})=>
     //declaration of login page
     const login = page.locator("#login");
 
-    //Varidation
+    //Validation
     await firstName.fill("Aashik");
     await secondName.fill("ahamed");
     await emailId.fill(credentials.userEmailId);
@@ -50,7 +50,7 @@ test ('Registration_Orginal',async({page})=>
     
 }
 )
-test ('Login_Original', async({page})=>
+test ('@Web - Validate Login till country selection', async({page})=>
 {
     await page.goto("https://rahulshettyacademy.com/client/#/auth/login");
 

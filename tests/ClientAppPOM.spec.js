@@ -8,7 +8,7 @@
  
 for(const data of dataset)
 {
- test(`@Webs Client App login for ${data.productName}`, async ({page})=>
+ test(`@Web - Validate the login and order placement for ${data.productName}`, async ({page})=>
  {
    const poManager = new POManager(page);
     //js file- Login js, DashboardPage
@@ -32,17 +32,10 @@ for(const data of dataset)
    const ordersHistoryPage = poManager.getOrdersHistoryPage();
    await ordersHistoryPage.searchOrderAndSelect(orderId);
    expect(orderId.includes(await ordersHistoryPage.getOrderId())).toBeTruthy();
-
-
-
-
-
-
-    
  });
 }
 
- customtest(`Client App login`, async ({page,testDataForOrder})=>
+ customtest(`@Web - Validate Login and order placement`, async ({page,testDataForOrder})=>
  {
    const poManager = new POManager(page);
     //js file- Login js, DashboardPage

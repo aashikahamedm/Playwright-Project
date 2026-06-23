@@ -28,7 +28,7 @@ function readExcel(worksheet, searchText) {
 //update Mango Price to 350. 
 //writeExcelTest("Mango",350,{rowChange:0,colChange:2},"/Users/rahulshetty/downloads/excelTest.xlsx");
  
-test('Upload download excel validation', async ({ page }) => {
+test('@excel - Validate Upload and download using excel', async ({ page }) => {
   const textSearch = 'Mango';
   const updateValue = '350';
  
@@ -39,7 +39,7 @@ test('Upload download excel validation', async ({ page }) => {
   const dl = await download;
   const filePath = 'C:\\Users\\Windows\\Downloads\\Playwright Path\\download.xlsx'; // or await dl.path()
  
-  // ✅ Ensure the edit finishes before upload
+  // Ensure the edit finishes before upload
   await writeExcelTest(textSearch, updateValue, { rowChange: 0, colChange: 2 }, filePath);
  
   await page.locator('#fileinput').setInputFiles(filePath);

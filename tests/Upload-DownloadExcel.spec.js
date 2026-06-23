@@ -37,7 +37,7 @@ async function readExcel(worksheet,searchText)
 }
 //update Mango Price to 350. 
 //writeExcelTest("Mango",350,{rowChange:0,colChange:2},"/Users/rahulshetty/downloads/excelTest.xlsx");
-test('Upload download excel validation',async ({page})=>
+test('@excel - Upload and download excel validation',async ({page})=>
 {
   const textSearch = 'Banana';
   const updateValue = '299';
