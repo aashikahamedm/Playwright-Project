@@ -1,5 +1,3 @@
-const { exec } = require("child_process")
-
 const { defineParameterType, When, Given, Then } = require("@cucumber/cucumber")
 const path = require("path")
 let poManager

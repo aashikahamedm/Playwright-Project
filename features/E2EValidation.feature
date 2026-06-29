@@ -11,7 +11,7 @@ Feature: Order History Validation
     Examples:
       | username                 | password    | product     |
       | aashikahamed.m@gmail.com | Abcde@12345 | ZARA COAT 3 |
-
+  @Negative
   Scenario Outline: Negative Scenario for login
     Given login to Ecommerce2 application with "<username>" and "<password>"
     Then Verify Error message is displayed

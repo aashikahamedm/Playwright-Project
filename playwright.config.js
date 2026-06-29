@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
+import { truncate } from 'node:fs';
 
 /**
  * Read environment variables from file.
@@ -29,7 +30,7 @@ export default defineConfig({
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless: false,
+    headless: true,
     trace: 'on-first-retry',
   },
 
