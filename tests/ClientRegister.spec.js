@@ -46,7 +46,7 @@ test ('@Web - Validate Registration',async({page})=>
     await checkBox.check();
     await register.click();
 
-    await loginButton.click();   
+    await loginButton.click({ force: true });  
     
 }
 )
