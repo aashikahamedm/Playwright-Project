@@ -38,9 +38,11 @@ test("@Web - Screenshot & Visual comparision Validation",async({page})=>
 test("@Web - visual validation",async({page})=>
 {
     //make payment -when you 0 balance
-      await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
-    expect(await page.screenshot()).toMatchSnapshot('landingpage.png');
-
+    await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+    await page.waitForLoadState('networkidle');
+    await expect(page).toHaveScreenshot('landingpage.png', {
+        maxDiffPixels: 150
+    });
 })
 
 

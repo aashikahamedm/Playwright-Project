@@ -1,4 +1,5 @@
 const ExcelJs = require('exceljs');
+const path = require('path');
 const { test, expect } = require('@playwright/test');
  
 async function writeExcelTest(searchText, replaceText, change, filePath) {
@@ -34,11 +35,12 @@ test('@excel - Validate Upload and download using excel', async ({ page }) => {
  
   await page.goto('https://rahulshettyacademy.com/upload-download-test/index.html');
  
-  const download = page.waitForEvent('download');
+  const downloadPromise = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Download' }).click();
-  const dl = await download;
-  const filePath = 'C:\\Users\\Windows\\Downloads\\Playwright Path\\download.xlsx'; // or await dl.path()
- 
+  const download = await downloadPromise;
+  const filePath = path.join(__dirname, 'download.xlsx'); // or await dl.path()
+  await download.saveAs(filePath);
+
   // Ensure the edit finishes before upload
   await writeExcelTest(textSearch, updateValue, { rowChange: 0, colChange: 2 }, filePath);
  

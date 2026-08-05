@@ -1,0 +1,1 @@
+C:\Users\Windows\Downloads\ISM\Playwright Automation\tests\MoreValidations.spec.js-snapshots\landingpage-chromium-win32.png does not match, writing actual.
