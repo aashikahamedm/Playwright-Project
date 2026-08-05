@@ -12,8 +12,6 @@ async function writeExcelTest(searchText, replaceText, change, filePath) {
   cell.value = replaceText;
   await workbook.xlsx.writeFile(filePath);
 }
- 
-// This does no async work, so don't mark it async.
 function readExcel(worksheet, searchText) {
   let output = { row: -1, column: -1 };
   worksheet.eachRow((row, rowNumber) => {
