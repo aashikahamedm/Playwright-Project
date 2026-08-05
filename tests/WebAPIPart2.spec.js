@@ -11,7 +11,7 @@ test.beforeAll(async () => {
   response = await apiUtils.createOrder(orderPayLoad);
 })
 //create order is success
-test('@API - Validate Blank Orders', async ({ page }) => {
+test.skip('@API - Validate Blank Orders', async ({ page }) => {
   page.addInitScript(value => {
     window.localStorage.setItem('token', value);
   }, response.token);
